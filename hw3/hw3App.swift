@@ -4,14 +4,17 @@
 //
 //  Created by Broderick Ryan Schmidt on 9/15/23.
 //
-
+import Foundation
 import SwiftUI
 
 @main
-struct hw3App: App {
+struct hw3: App {
+    @State private var colorScheme : ColorScheme = .light
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView(colorScheme: $colorScheme)
+                .preferredColorScheme(colorScheme)
         }
     }
 }

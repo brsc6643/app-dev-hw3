@@ -4,7 +4,7 @@
 //
 //  Created by ATLAS Laptop 2 on 9/5/23.
 //
-
+import Foundation
 import SwiftUI
 
 struct ContentView: View {
@@ -12,40 +12,50 @@ struct ContentView: View {
     @State var switched: Bool = false
     @State private var showingSheet = false //state variable set to showingsheet set to a boolean false initially
     @State private var showAlert = false //define state variable showAlert and initialize it false
+    @State private var searchpage = false
+    
+    @Binding var colorScheme: ColorScheme
+    
+    
     
     var body: some View { //body view declared
         NavigationView() {
-            HStack{
-                Button ("Alert 1") {
-                    showAlert = true
-                }
-                .alert(isPresented: $showAlert) {
-                    Alert(
-                        title: Text("This alert has been activated."),
-                        message: Text("Beep boop bop boop."))
-                }.padding()
-                Button ("Alert 2") {
-                    showAlert = true
-                }
-                .alert(isPresented: $showAlert) {
-                    Alert(
-                        title: Text("This alert has been activated."),
-                        message: Text("Beep boop bop boop."))
-                }.padding()
-                
-                Button ("Alert 3") {
-                    showAlert = true
-                }
-                .alert(isPresented: $showAlert) {
-                    Alert(
-                        title: Text("This alert has been activated."),
-                        message: Text("Beep boop bop boop."))
-                }.padding()
+            NavigationLink(destination: SearchView()) {
+                Text("Search").padding().background(Color.accentColor)
+                .foregroundStyle(.white)            }
+            .navigationBarTitle("Home Page", displayMode: .inline)
+        }
+        HStack{
+            Button ("Alert 1") {
+                showAlert = true
             }
-            .navigationTitle("Welcome to my app.")
+            .alert(isPresented: $showAlert) {
+                Alert(
+                    title: Text("This alert has been activated."),
+                    message: Text("Beep boop bop boop."))
+            }.padding()
+            Button ("Alert 2") {
+                showAlert = true
             }
-        VStack { //vertial stack declared
-
+            .alert(isPresented: $showAlert) {
+                Alert(
+                    title: Text("This alert has been activated."),
+                    message: Text("Beep boop bop boop."))
+            }.padding()
+            
+            Button ("Alert 3") {
+                showAlert = true
+            }
+            .alert(isPresented: $showAlert) {
+                Alert(
+                    title: Text("This alert has been activated."),
+                    message: Text("Beep boop bop boop."))
+            }.padding()
+            
+            
+        }
+        VStack { //vertical stack declared
+            
             HStack { //horizontal stack declared
                 Image(systemName: "person") //person icons placed in horizontal stack side by side
                     .imageScale(.large)
@@ -72,8 +82,7 @@ struct ContentView: View {
                     Text("Let's get started!")
                         .font(.title)
                         .multilineTextAlignment(.center) .foregroundColor(.white))
-                .padding()
-            Text("Tap the switch below to interact with this app.")
+            Text("Tap something to interact with the app. ")
                 .padding()
             Toggle("", isOn: $switched) //use Toggle() to declare a button. This toggle has no text and when is on triggers the $switched flag
                 .foregroundColor(Color.accentColor)
@@ -91,53 +100,32 @@ struct ContentView: View {
                 SheetView()
                 
             }
-            .padding()
             
             
         }
         
- 
+        
         
         TabView {
-            Text("Home")
+            LightModeView(colorScheme: $colorScheme)
                 .tabItem {
-                    Label("Home", systemImage: "house")
-                    Button("Home") {
-                        showingSheet.toggle()
+                    Label("Light Mode Ready", systemImage: "sun.max.fill")
+                }
+            DarkModeView(colorScheme: $colorScheme)
+                .tabItem {
+                    Label("Dark Mode Ready", systemImage: "moon.fill")
+                    Button("Switch to Light Mode") {
+                        colorScheme = .light
                     }
-                    .sheet(isPresented: $showingSheet) {
-                        SheetView()
-                        
-                    }
                 }
-            Text("Search")
-                .tabItem {
-                    
-                    Label("Search", systemImage: "magnifyingglass")
-                }
-            Text("Notification")
-                .tabItem {
-                    
-                    Label("Notification", systemImage: "bell")
-                }
-            Text("Settings")
-                .tabItem {
-                    
-                    Label("Settings", systemImage: "gearshape")
-                }
-            
-        }
-        
-
-        
-    } //end body
-    
-    
-    struct ContentView_Previews: PreviewProvider { //declare PreviewProvider object
-        static var previews: some View { //declare static variable previews that is on object of type View
-            ContentView() //preview ContentView page
-            //SheetView()
         }
     }
     
+    struct ContentView_Previews: PreviewProvider {
+        static var previews: some View {
+            ContentView(colorScheme: .constant(.light))
+        }
+    }
 }
+
+

@@ -15,7 +15,10 @@
 		8209EA792AB4EFCD00A78DC1 /* hw3UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8209EA782AB4EFCD00A78DC1 /* hw3UITests.swift */; };
 		8209EA7B2AB4EFCD00A78DC1 /* hw3UITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8209EA7A2AB4EFCD00A78DC1 /* hw3UITestsLaunchTests.swift */; };
 		8209EA8A2AB4FB2100A78DC1 /* SheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8209EA892AB4FB2100A78DC1 /* SheetView.swift */; };
-		8209EA8E2AB5169E00A78DC1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8209EA8D2AB5169E00A78DC1 /* ContentView.swift */; };
+		823BB1F42AB52A2E0078CEAE /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823BB1F32AB52A2E0078CEAE /* SearchView.swift */; };
+		823BB1F62AB535BD0078CEAE /* scratc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823BB1F52AB535BD0078CEAE /* scratc.swift */; };
+		823BB1F92AB542F60078CEAE /* LightModeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823BB1F82AB542F60078CEAE /* LightModeView.swift */; };
+		823BB1FB2AB543300078CEAE /* DarkModeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823BB1FA2AB543300078CEAE /* DarkModeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,7 +51,10 @@
 		8209EA782AB4EFCD00A78DC1 /* hw3UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = hw3UITests.swift; sourceTree = "<group>"; };
 		8209EA7A2AB4EFCD00A78DC1 /* hw3UITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = hw3UITestsLaunchTests.swift; sourceTree = "<group>"; };
 		8209EA892AB4FB2100A78DC1 /* SheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetView.swift; sourceTree = "<group>"; };
-		8209EA8D2AB5169E00A78DC1 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContentView.swift; path = "../../../Documents/GitHub/app-dev-hw3/ContentView.swift"; sourceTree = "<group>"; };
+		823BB1F32AB52A2E0078CEAE /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
+		823BB1F52AB535BD0078CEAE /* scratc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = scratc.swift; sourceTree = "<group>"; };
+		823BB1F82AB542F60078CEAE /* LightModeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightModeView.swift; sourceTree = "<group>"; };
+		823BB1FA2AB543300078CEAE /* DarkModeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarkModeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,9 +106,8 @@
 			isa = PBXGroup;
 			children = (
 				8209EA5C2AB4EFCB00A78DC1 /* hw3App.swift */,
-				8209EA5E2AB4EFCB00A78DC1 /* ContentView.swift */,
-				8209EA8D2AB5169E00A78DC1 /* ContentView.swift */,
-				8209EA892AB4FB2100A78DC1 /* SheetView.swift */,
+				823BB1F52AB535BD0078CEAE /* scratc.swift */,
+				823BB1F72AB539A40078CEAE /* Views */,
 				8209EA602AB4EFCC00A78DC1 /* Assets.xcassets */,
 				8209EA622AB4EFCC00A78DC1 /* hw3.entitlements */,
 				8209EA632AB4EFCC00A78DC1 /* Preview Content */,
@@ -133,6 +138,18 @@
 				8209EA7A2AB4EFCD00A78DC1 /* hw3UITestsLaunchTests.swift */,
 			);
 			path = hw3UITests;
+			sourceTree = "<group>";
+		};
+		823BB1F72AB539A40078CEAE /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				823BB1F32AB52A2E0078CEAE /* SearchView.swift */,
+				8209EA5E2AB4EFCB00A78DC1 /* ContentView.swift */,
+				8209EA892AB4FB2100A78DC1 /* SheetView.swift */,
+				823BB1F82AB542F60078CEAE /* LightModeView.swift */,
+				823BB1FA2AB543300078CEAE /* DarkModeView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -265,9 +282,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				823BB1FB2AB543300078CEAE /* DarkModeView.swift in Sources */,
+				823BB1F42AB52A2E0078CEAE /* SearchView.swift in Sources */,
+				823BB1F62AB535BD0078CEAE /* scratc.swift in Sources */,
 				8209EA5F2AB4EFCB00A78DC1 /* ContentView.swift in Sources */,
 				8209EA8A2AB4FB2100A78DC1 /* SheetView.swift in Sources */,
-				8209EA8E2AB5169E00A78DC1 /* ContentView.swift in Sources */,
+				823BB1F92AB542F60078CEAE /* LightModeView.swift in Sources */,
 				8209EA5D2AB4EFCB00A78DC1 /* hw3App.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
